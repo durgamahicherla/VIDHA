@@ -5,6 +5,7 @@ import MoodCheckIn from './MoodCheckIn'
 import Dashboard from './Dashboard'
 import Quiz from './Quiz'
 import AuraChat from './AuraChat'
+import StudyPlan from './StudyPlan'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/aura" element={<AuraChat />} />
+        <Route path="/studyplan" element={<StudyPlan />} />
       </Routes>
     </BrowserRouter>
   )
