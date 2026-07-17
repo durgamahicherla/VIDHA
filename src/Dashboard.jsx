@@ -15,7 +15,6 @@ function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-900 p-6">
 
-      {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-white">VIDHA 🚀</h1>
@@ -29,7 +28,6 @@ function Dashboard() {
         </button>
       </div>
 
-      {/* Stats Row */}
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-gray-800 p-4 rounded-2xl text-center">
           <p className="text-3xl font-bold text-purple-400">7</p>
@@ -45,7 +43,30 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Today's Study Plan */}
+      <div className="grid grid-cols-3 gap-4 mb-8">
+        <button
+          onClick={() => navigate('/studyplan')}
+          className="bg-purple-700 hover:bg-purple-600 p-4 rounded-2xl text-center"
+        >
+          <p className="text-2xl mb-1">📅</p>
+          <p className="text-white font-bold text-sm">Study Plan</p>
+        </button>
+        <button
+          onClick={() => navigate('/quiz')}
+          className="bg-blue-700 hover:bg-blue-600 p-4 rounded-2xl text-center"
+        >
+          <p className="text-2xl mb-1">🧠</p>
+          <p className="text-white font-bold text-sm">Take Quiz</p>
+        </button>
+        <button
+          onClick={() => navigate('/aura')}
+          className="bg-green-700 hover:bg-green-600 p-4 rounded-2xl text-center"
+        >
+          <p className="text-2xl mb-1">🤖</p>
+          <p className="text-white font-bold text-sm">Ask Aura</p>
+        </button>
+      </div>
+
       <div className="bg-gray-800 p-6 rounded-2xl mb-6">
         <h2 className="text-xl font-bold text-white mb-4">📅 Today's Study Plan</h2>
         <div className="space-y-3">
@@ -67,7 +88,6 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Weak & Strong Topics */}
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="bg-gray-800 p-6 rounded-2xl">
           <h2 className="text-lg font-bold text-red-400 mb-3">⚠️ Weak Topics</h2>
@@ -91,11 +111,10 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* AI Insight */}
       <div className="bg-purple-900 border border-purple-600 p-6 rounded-2xl">
         <h2 className="text-lg font-bold text-purple-300 mb-2">🤖 AI Insight</h2>
         <p className="text-gray-300">
-          Based on your performance, focus on <span className="text-purple-400 font-bold">Neural Networks</span> today. 
+          Based on your performance, focus on <span className="text-purple-400 font-bold">Neural Networks</span> today.
           You scored 40% last session — a quick 45-min revision will boost your confidence before the exam!
         </p>
       </div>
