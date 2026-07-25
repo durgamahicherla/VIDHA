@@ -40,8 +40,10 @@ function Signup() {
               <option value="telugu">Telugu</option>
             </select>
           </div>
-          <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-xl transition-all duration-200">
-            Create Account
+          <button 
+          onClick={() => window.location.href = '/mood'}
+          className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-xl transition-all duration-200 cursor-pointer">
+           Create Account
           </button>
         </div>
         <p className="text-gray-400 text-center mt-6">

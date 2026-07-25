@@ -43,7 +43,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-4 gap-4 mb-8">
         <button
           onClick={() => navigate('/studyplan')}
           className="bg-purple-700 hover:bg-purple-600 p-4 rounded-2xl text-center"
@@ -64,6 +64,13 @@ function Dashboard() {
         >
           <p className="text-2xl mb-1">🤖</p>
           <p className="text-white font-bold text-sm">Ask Aura</p>
+        </button>
+        <button
+          onClick={() => navigate('/timer')}
+          className="bg-orange-700 hover:bg-orange-600 p-4 rounded-2xl text-center"
+        >
+          <p className="text-2xl mb-1">⏱️</p>
+          <p className="text-white font-bold text-sm">Timer</p>
         </button>
       </div>
 
