@@ -7,6 +7,7 @@ import Quiz from './Quiz'
 import AuraChat from './AuraChat'
 import StudyPlan from './StudyPlan'
 import Timer from './Timer'
+import Progress from './Progress'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/aura" element={<AuraChat />} />
         <Route path="/studyplan" element={<StudyPlan />} />
         <Route path="/timer" element={<Timer />} />
+        <Route path="/progress" element={<Progress />} />
       </Routes>
     </BrowserRouter>
   )
