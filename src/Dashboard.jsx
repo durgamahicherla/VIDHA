@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
   const navigate = useNavigate()
+  const [darkMode, setDarkMode] = useState(true)
 
   const weakTopics = ['Neural Networks', 'OS Scheduling', 'DBMS Joins']
   const strongTopics = ['Python Basics', 'Linear Algebra', 'Git & GitHub']
@@ -12,34 +14,48 @@ function Dashboard() {
     { subject: 'OS', time: '1 hr', priority: 'Low' },
   ]
 
+  const bg = darkMode ? 'bg-gray-900' : 'bg-gray-100'
+  const card = darkMode ? 'bg-gray-800' : 'bg-white'
+  const cardInner = darkMode ? 'bg-gray-700' : 'bg-gray-100'
+  const text = darkMode ? 'text-white' : 'text-gray-900'
+  const subtext = darkMode ? 'text-gray-400' : 'text-gray-500'
+
   return (
-    <div className="min-h-screen bg-gray-900 p-6">
+    <div className={`min-h-screen ${bg} p-6`}>
 
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-white">VIDHA 🚀</h1>
-          <p className="text-gray-400">Welcome back, Durga!</p>
+          <h1 className={`text-3xl font-bold ${text}`}>VIDHA 🚀</h1>
+          <p className={subtext}>Welcome back, Durga!</p>
         </div>
-        <button
-          onClick={() => navigate('/mood')}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl"
-        >
-          Daily Check-In
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`px-4 py-2 rounded-xl font-bold ${darkMode ? 'bg-gray-700 text-yellow-400' : 'bg-gray-200 text-gray-700'}`}
+          >
+            {darkMode ? '☀️ Light' : '🌙 Dark'}
+          </button>
+          <button
+            onClick={() => navigate('/mood')}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl"
+          >
+            Daily Check-In
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <div className="bg-gray-800 p-4 rounded-2xl text-center">
+        <div className={`${card} p-4 rounded-2xl text-center`}>
           <p className="text-3xl font-bold text-purple-400">7</p>
-          <p className="text-gray-400 text-sm">Day Streak 🔥</p>
+          <p className={`${subtext} text-sm`}>Day Streak 🔥</p>
         </div>
-        <div className="bg-gray-800 p-4 rounded-2xl text-center">
+        <div className={`${card} p-4 rounded-2xl text-center`}>
           <p className="text-3xl font-bold text-green-400">82%</p>
-          <p className="text-gray-400 text-sm">Quiz Score</p>
+          <p className={`${subtext} text-sm`}>Quiz Score</p>
         </div>
-        <div className="bg-gray-800 p-4 rounded-2xl text-center">
+        <div className={`${card} p-4 rounded-2xl text-center`}>
           <p className="text-3xl font-bold text-blue-400">12</p>
-          <p className="text-gray-400 text-sm">Topics Done</p>
+          <p className={`${subtext} text-sm`}>Topics Done</p>
         </div>
       </div>
 
@@ -81,14 +97,14 @@ function Dashboard() {
         </button>
       </div>
 
-      <div className="bg-gray-800 p-6 rounded-2xl mb-6">
-        <h2 className="text-xl font-bold text-white mb-4">📅 Today's Study Plan</h2>
+      <div className={`${card} p-6 rounded-2xl mb-6`}>
+        <h2 className={`text-xl font-bold ${text} mb-4`}>📅 Today's Study Plan</h2>
         <div className="space-y-3">
           {studyPlan.map((item, index) => (
-            <div key={index} className="flex justify-between items-center bg-gray-700 p-3 rounded-xl">
-              <span className="text-white font-medium">{item.subject}</span>
+            <div key={index} className={`flex justify-between items-center ${cardInner} p-3 rounded-xl`}>
+              <span className={`${text} font-medium`}>{item.subject}</span>
               <div className="flex gap-3 items-center">
-                <span className="text-gray-400 text-sm">{item.time}</span>
+                <span className={`${subtext} text-sm`}>{item.time}</span>
                 <span className={`text-xs px-2 py-1 rounded-full font-bold ${
                   item.priority === 'High' ? 'bg-red-500 text-white' :
                   item.priority === 'Medium' ? 'bg-yellow-500 text-black' :
@@ -103,21 +119,21 @@ function Dashboard() {
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-gray-800 p-6 rounded-2xl">
+        <div className={`${card} p-6 rounded-2xl`}>
           <h2 className="text-lg font-bold text-red-400 mb-3">⚠️ Weak Topics</h2>
           <div className="space-y-2">
             {weakTopics.map((topic, index) => (
-              <div key={index} className="bg-gray-700 px-3 py-2 rounded-lg text-gray-300 text-sm">
+              <div key={index} className={`${cardInner} px-3 py-2 rounded-lg ${subtext} text-sm`}>
                 {topic}
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-gray-800 p-6 rounded-2xl">
+        <div className={`${card} p-6 rounded-2xl`}>
           <h2 className="text-lg font-bold text-green-400 mb-3">✅ Strong Topics</h2>
           <div className="space-y-2">
             {strongTopics.map((topic, index) => (
-              <div key={index} className="bg-gray-700 px-3 py-2 rounded-lg text-gray-300 text-sm">
+              <div key={index} className={`${cardInner} px-3 py-2 rounded-lg ${subtext} text-sm`}>
                 {topic}
               </div>
             ))}
