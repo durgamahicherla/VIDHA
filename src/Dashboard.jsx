@@ -59,7 +59,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-6 gap-4 mb-8">
+      <div className="grid grid-cols-7 gap-4 mb-8">
         <button
           onClick={() => navigate('/studyplan')}
           className="bg-purple-700 hover:bg-purple-600 p-4 rounded-2xl text-center"
@@ -101,6 +101,13 @@ function Dashboard() {
         >
           <p className="text-2xl mb-1">🏆</p>
           <p className="text-white font-bold text-sm">Leaderboard</p>
+        </button>
+        <button
+          onClick={() => navigate('/interview')}
+          className="bg-red-700 hover:bg-red-600 p-4 rounded-2xl text-center"
+        >
+          <p className="text-2xl mb-1">🎯</p>
+          <p className="text-white font-bold text-sm">Interview</p>
         </button>
       </div>
 
