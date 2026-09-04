@@ -10,6 +10,7 @@ import Timer from './Timer'
 import Progress from './Progress'
 import Leaderboard from './Leaderboard'
 import InterviewPrep from './InterviewPrep'
+import MockInterview from './MockInterview'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/progress" element={<Progress />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/interview" element={<InterviewPrep />} />
+        <Route path="/mock" element={<MockInterview />} />
       </Routes>
     </BrowserRouter>
   )
