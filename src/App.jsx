@@ -9,6 +9,7 @@ import StudyPlan from './StudyPlan'
 import Timer from './Timer'
 import Progress from './Progress'
 import Leaderboard from './Leaderboard'
+import InterviewPrep from './InterviewPrep'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/timer" element={<Timer />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/interview" element={<InterviewPrep />} />
       </Routes>
     </BrowserRouter>
   )
